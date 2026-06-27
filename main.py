@@ -13,7 +13,7 @@ def main():
         send_email(result, load_config())
 
     create_scheduler(scheduled_job, cfg["schedule"]["run_time"])
-    create_app().run(host="127.0.0.1", port=5000, use_reloader=False)
+    create_app().run(host="0.0.0.0", port=5000, use_reloader=False)
 
 
 if __name__ == "__main__":
