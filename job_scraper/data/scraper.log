@@ -1,0 +1,20 @@
+2026-06-23 18:41:54,626 MojeDelo: timeout
+2026-06-23 18:43:21,831 MojeDelo: timeout
+2026-06-23 18:46:57,952 MojeDelo: timeout
+2026-06-23 18:50:38,229 Zaposlitev.net: module 'scrapers.zaposlitev' has no attribute 'ZaposlitevScraper'
+2026-06-27 09:19:15,045 Zaposlitev.net: module 'scrapers.zaposlitev' has no attribute 'ZaposlitevScraper'
+2026-06-27 09:21:37,705 MojeDelo: timeout
+2026-06-27 09:22:09,060 Zaposlitev.net: HTTPSConnectionPool(host='www.zaposlitev.net', port=443): Max retries exceeded with url: /dela?q=IT (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001AC3F1A1D10>: Failed to resolve 'www.zaposlitev.net' ([Errno 11001] getaddrinfo failed)"))
+2026-06-27 09:42:02,831 MojeDelo: timeout
+2026-06-27 09:47:11,160 MojeDelo: timeout
+2026-06-27 09:50:08,989 MojeDelo: timeout
+2026-06-27 09:57:14,713 MojeDelo: timeout
+2026-06-27 09:57:57,165 MojeDelo: timeout
+2026-06-27 10:03:14,178 MojeDelo: timeout
+2026-06-27 10:12:52,094 MojeDelo: timeout
+2026-06-27 10:22:24,299 MojeDelo: timeout
+2026-06-27 10:31:38,591 MojeDelo: timeout
+2026-06-27 10:34:38,004 MojeDelo: timeout
+2026-06-27 10:44:35,151 MojeDelo: timeout
+2026-06-27 10:52:12,229 MojeDelo: timeout
+2026-06-27 10:55:10,718 MojeDelo: timeout
