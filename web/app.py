@@ -52,3 +52,6 @@ def create_app() -> Flask:
         return redirect(url_for("dashboard"))
 
     return app
+
+
+app = create_app()
