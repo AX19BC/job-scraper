@@ -2,9 +2,11 @@ import json, os
 from datetime import datetime, timedelta
 from pathlib import Path
 from flask import Flask, render_template, redirect, url_for
+from apscheduler.schedulers.background import BackgroundScheduler
 from core.pipeline import run_pipeline
 from core.mailer import send_email
 from core.config import load_config
+
 
 CATEGORY_ORDER = ["cyber_security", "public_sector_cyber", "network", "sysadmin", "it_other"]
 CATEGORY_LABELS = {
@@ -47,9 +49,15 @@ def create_app() -> Flask:
 
     @app.route("/run-now", methods=["POST"])
     def run_now():
-        result = run_pipeline()
-        send_email(result, load_config())
+        def _run():
+            result = run_pipeline()
+            send_email(result, load_config())
+
+        scheduler = BackgroundScheduler()
+        scheduler.add_job(_run, "date")
+        scheduler.start()
         return redirect(url_for("dashboard"))
+
 
     return app
 
