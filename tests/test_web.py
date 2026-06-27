@@ -32,8 +32,10 @@ def test_dashboard_shows_job_title(client):
 
 def test_run_now_redirects(client, monkeypatch):
     c, _ = client
-    monkeypatch.setattr("web.app.run_pipeline",
-                        lambda: {"total": 0, "jobs": [], "errors": [], "scraped_at": ""})
-    monkeypatch.setattr("web.app.send_email", lambda r, cfg: None)
-    monkeypatch.setattr("web.app.load_config", lambda: {"email": {}})
+
+    class _FakeScheduler:
+        def add_job(self, *args, **kwargs): pass
+        def start(self): pass
+
+    monkeypatch.setattr("web.app.BackgroundScheduler", _FakeScheduler)
     assert c.post("/run-now").status_code == 302
